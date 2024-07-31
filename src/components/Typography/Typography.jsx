@@ -10,8 +10,9 @@ export default function Typography() {
             <h5>Heading5</h5>
             <h6>Heading6</h6>
             <p>This is Paragraph</p>
-            <a href="#">Link</a><br/>
-            <button>Button</button><br/>
+            <a href="#">Link</a><br/><br/>
+            <a href="#" className='link'>Link Text</a><br/><br/>
+            <button>Button</button><br/><br/>
             <span>Span Tag</span>
     </div>
   )
