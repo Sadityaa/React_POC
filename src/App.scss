@@ -36,3 +36,64 @@
     transform: rotate(360deg);
   }
 }
+
+// Global CSS
+body{font-size: 16px;padding: 0;margin: 0;}//base font
+*{box-sizing: border-box;}
+h1, h2, h3, h4, h5, h6 { 
+  font-family: "Raleway", sans-serif;
+  font-weight: 700; 
+  color: #222;
+}
+
+h1{font-size: 3rem;}
+h2{font-size: 2.5rem;}
+h3{font-size: 2rem;}
+h4{font-size: 1.5rem;}
+h5{font-size: 1rem;}
+h6{font-size: 0.85rem;}
+ul{padding: 0;margin: 0;}
+p,span,a{
+  font-family: "Raleway", sans-serif;
+  font-weight: 500; 
+  color: #222;
+  font-size: 1rem;
+}
+
+a.link{color: #1313f3;}
+
+// Global class
+.d_flex{
+  display: flex;flex-wrap: wrap;
+}
+
+// Generating Dynamic Spaces 
+@each $abbr, $name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
+  @for $i from 1 through 20 {
+    .p#{$abbr}-#{$i} {
+      //use classname pt-1 upto pt-20
+      padding-#{$name}: 0.5rem * $i;
+    }
+    .py-#{$i}{
+      padding-bottom:0.5rem * $i;
+      padding-top:0.5rem * $i;
+    }
+    .px-#{$i}{
+      padding-left:0.5rem * $i;
+      padding-right:0.5rem * $i;
+    }
+
+    .m#{$abbr}-#{$i} {
+      //use classname mt-1 upto mt-20
+     margin-#{$name}: 0.5rem * $i;
+    }
+    .my-#{$i}{
+      margin-bottom:0.5rem * $i;
+      margin-top:0.5rem * $i;
+    }
+    .mx-#{$i}{
+      margin-left:0.5rem * $i;
+      margin-right:0.5rem * $i;
+    }
+  }
+}
