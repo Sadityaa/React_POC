@@ -5,8 +5,7 @@ import Typography from '../../components/Typography/Typography'
 export default function Home() {
   return (
     <div>
-      <Header/>
-      <Typography/>
+      <Typography />
     </div>
   )
 }
