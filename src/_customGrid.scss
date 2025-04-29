@@ -1,0 +1,38 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Define the maximum number of columns
+$columns: 12;
+
+// Mixin to generate column classes
+@mixin generate-columns($breakpoints, $columns) {
+    @each $breakpoint, $min-width in $breakpoints {
+      @media (min-width: $min-width) {
+        @for $i from 1 through $columns {
+          .col_#{$breakpoint}_#{$i} {
+            width: (100% / $columns) * $i;
+            flex: 0 0 (100% / $columns) * $i;
+            max-width: (100% / $columns) * $i;
+          }
+        }
+      }
+    }
+  }
+
+  // Generate responsive column classes
+@include generate-columns($breakpoints, $columns);
+
+// Default column class for extra small screens
+@for $i from 1 through $columns {
+    .col_#{$i} {
+      width: (100% / $columns) * $i;
+      flex: 0 0 (100% / $columns) * $i;
+      max-width: (100% / $columns) * $i;
+    }
+  }

@@ -1,0 +1,213 @@
+// Define breakpoints for responsiveness
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Flexbox utility properties and values
+$flex-properties: (
+  display: (flex, inline-flex),
+  direction: (row, row-reverse, column, column-reverse),
+  wrap: (nowrap, wrap, wrap-reverse),
+  justify-content: (
+    start,
+    end,
+    center,
+    between,
+    around,
+    evenly
+  ),
+  align-items: (
+    start,
+    end,
+    center,
+    baseline,
+    stretch
+  ),
+  align-self: (
+    auto,
+    start,
+    end,
+    center,
+    baseline,
+    stretch
+  ),
+  align-content: (
+    start,
+    end,
+    center,
+    between,
+    around,
+    stretch
+  ),
+);
+
+// Generate utility classes for flex properties
+@mixin generate-flex-utilities($breakpoints, $flex-properties) {
+  @each $property, $values in $flex-properties {
+    @each $value in $values {
+      .#{$property}_#{$value} {
+        #{$property}: #{$value} !important;
+      }
+    }
+
+    @each $breakpoint, $min-width in $breakpoints {
+      @media (min-width: $min-width) {
+        @each $value in $values {
+          .#{$property}_#{$breakpoint}_#{$value} {
+            #{$property}: #{$value} !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Include the flex utility mixin
+@include generate-flex-utilities($breakpoints, $flex-properties);
+
+// Generate utility classes for flex-grow and flex-shrink
+@for $i from 0 through 1 {
+  .flex_grow_#{$i} {
+    flex-grow: #{$i} !important;
+  }
+  .flex_shrink_#{$i} {
+    flex-shrink: #{$i} !important;
+  }
+
+  @each $breakpoint, $min-width in $breakpoints {
+    @media (min-width: $min-width) {
+      .flex_grow_#{$breakpoint}_#{$i} {
+        flex-grow: #{$i} !important;
+      }
+      .flex_shrink_#{$breakpoint}_#{$i} {
+        flex-shrink: #{$i} !important;
+      }
+    }
+  }
+}
+
+/* 
+General Flexbox Classes:
+
+d_flex
+d_inline_flex
+
+Flex Direction Classes
+
+flex_row
+flex_row_reverse
+flex_column
+flex_column_reverse
+
+Flex Wrap Classes
+
+flex_nowrap
+flex_wrap
+flex_wrap_reverse
+
+Justify Content Classes
+
+justify_content_start
+justify_content_end
+justify_content_center
+justify_content_between
+justify_content_around
+justify_content_evenly
+
+Align Items Classes
+
+align_items_start
+align_items_end
+align_items_center
+align_items_baseline
+align_items_stretch
+
+Align Self Classes
+
+align_self_auto
+align_self_start
+align_self_end
+align_self_center
+align_self_baseline
+align_self_stretch
+
+Align Content Classes
+
+align_content_start
+align_content_end
+align_content_center
+align_content_between
+align_content_around
+align_content_stretch
+
+Flex Grow and Shrink Classes
+
+flex_grow_0
+flex_grow_1
+flex_shrink_0
+flex_shrink_1
+
+Responsive Classes (per breakpoint)
+
+Display Classes
+
+d_sm_flex
+d_md_flex
+d_lg_inline_flex
+
+Direction Classes
+
+flex_sm_row
+flex_md_row_reverse
+flex_lg_column
+flex_xl_column_reverse
+
+Wrap Classes
+
+flex_sm_nowrap
+flex_md_wrap
+flex_lg_wrap_reverse
+
+Justify Content Classes
+
+justify_content_sm_start
+justify_content_md_end
+justify_content_lg_center
+justify_content_xl_between
+
+Align Items Classes
+
+align_items_sm_start
+align_items_md_end
+align_items_lg_center
+align_items_xl_baseline
+
+Align Self Classes
+
+align_self_sm_auto
+align_self_md_start
+align_self_lg_end
+align_self_xl_center
+
+Align Content Classes
+
+align_content_sm_start
+align_content_md_end
+align_content_lg_center
+align_content_xl_between
+
+Flex Grow and Shrink Responsive Classes
+
+flex_grow_sm_0
+flex_grow_md_1
+flex_shrink_lg_0
+flex_shrink_xl_1
+
+
+
+*/

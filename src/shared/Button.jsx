@@ -11,10 +11,12 @@ const Button = ({
     size = 'md',
     variant = 'primary',
     icon = null,
-    iconClass = ''
+    iconClass = '',
+    iconPlacement = 'left',
 }) => {
     const sizeClass = size ? `btn-${size}` : '';
     const variantClass = variant ? `btn-${variant}` : '';
+    // const iconPlacements = icon ? iconPlacement : 'left';
 
     return (
         <button
@@ -23,8 +25,9 @@ const Button = ({
             onClick={onClick}
             disabled={disabled}
         >
-            {icon && <span className={`material-icons ${iconClass}`}>{icon}</span>}
+            {(icon && iconPlacement === 'left') && <span className={`material-icons ${iconClass}`}>{icon}</span>}
             {children}
+            {(icon && iconPlacement === 'right') && <span className={`material-icons ${iconClass}`}>{icon}</span>}
         </button>
     );
 };
@@ -38,6 +41,7 @@ Button.propTypes = {
     size: PropTypes.oneOf(['sm', 'md', 'lg']),
     variant: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning']),
     icon: PropTypes.element,
+    iconPlacement: PropTypes.oneOf(['left', 'right']),
 };
 
 export default Button;
