@@ -11,10 +11,10 @@ function App() {
     <div className="App">
        <Router>
       <div className='body_container'>
-        <div className=''>
-          <Sidebar></Sidebar>
-        </div>
+        {/* <div className=''>
+        </div> */}
         <div>
+          <Sidebar></Sidebar>
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />

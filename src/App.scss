@@ -1,6 +1,7 @@
 @import "https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&display=swap";
 @import "./_customGrid";
 @import "./_customFlexbox";
+@import "./_spaces";
 :root {
   --body-bg-rgb:237,238,241;
   --body-bg-rgb2:
@@ -169,7 +170,20 @@
   --black-8: rgba(255,255,255,0.8);
   --black-9: rgba(255,255,255,0.9);
 }
-
+[data-header-styles=gradient] {
+  --header-bg:
+    linear-gradient(
+      to right,
+      #4776e6 0%,
+      var(--primary-color)100%);
+  --header-border-color: rgba(255, 255, 255, 0.1);
+  --header-prime-color: rgba(255, 255, 255, 0.7);
+}
+[data-menu-styles=light] {
+  --menu-bg: #fff;
+  --menu-prime-color: #536485;
+  --menu-border-color: #f3f3f3;
+}
 .App {
   text-align: center;
 }
@@ -235,45 +249,7 @@ p,span,a{
 a.link{color: #1313f3;}
 
 // Global class
-.d_flex{
-  display: flex;flex-wrap: wrap;
-}
+// .d_flex{
+//   display: flex;flex-wrap: wrap;
+// }
 
-// Generating Dynamic Spaces 
-@each $abbr, $name in ("t": "top", "r": "right", "b": "bottom", "l": "left") {
-  @for $i from 1 through 20 {
-    .pa_#{$i} {
-      //use classname pt-1 upto pt-20
-      padding: 0.5rem * $i;
-    }
-    .p#{$abbr}_#{$i} {
-      //use classname pt-1 upto pt-20
-      padding-#{$name}: 0.5rem * $i;
-    }
-    .py_#{$i}{
-      padding-bottom:0.5rem * $i;
-      padding-top:0.5rem * $i;
-    }
-    .px_#{$i}{
-      padding-left:0.5rem * $i;
-      padding-right:0.5rem * $i;
-    }
-
-    .ma_#{$i} {
-      //use classname mt-1 upto mt-20
-     margin: 0.5rem * $i;
-    }
-    .m#{$abbr}_#{$i} {
-      //use classname mt-1 upto mt-20
-     margin-#{$name}: 0.5rem * $i;
-    }
-    .my_#{$i}{
-      margin-bottom:0.5rem * $i;
-      margin-top:0.5rem * $i;
-    }
-    .mx_#{$i}{
-      margin-left:0.5rem * $i;
-      margin-right:0.5rem * $i;
-    }
-  }
-}

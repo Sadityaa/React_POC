@@ -1,24 +1,50 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import './Header.scss';
+import { FaGlobe, FaMoon, FaShoppingCart, FaRegBell, FaThLarge, FaSlidersH, FaExpand } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <nav className='d_flex align_items_center py_1 px_5 bg-dark text-white'>
-      <a className="navbar-brand" href="#">Logo</a>
+    <header>
+      <nav className='display_flex align-items_center justify-content_space-between py_1 px_5 text-white'>
+        <a className="navbar-brand" href="#">Logo</a>
 
-      <ul className='d-flex mb-0 gap-5 ps-0'>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/toaster">Toaster</Link>
-        </li>
-        <li>
-          <Link to="/contact">Contact</Link>
-        </li>
-      </ul>
-    </nav>
+        <ul className='display_flex mb-0 gap-2 ps-0'>
+          <li>
+            <Link to="/"><FaGlobe /></Link>
+          </li>
+          <li>
+            <Link to="/"><FaMoon />
+            </Link>
+          </li>
+          <li>
+            <Link to="/"><FaShoppingCart />
+            </Link>
+          </li>
+          <li>
+            <Link to="/"><FaRegBell />
+            </Link>
+          </li>
+          {/* <li>
+          <Link to="/"><FaWindows  />
+          </Link>
+          </li> */}
+          <li>
+            <Link to="/"><FaThLarge />
+            </Link>
+          </li>
+          <li>
+            <Link to="/"><FaExpand />
+            </Link>
+          </li>
+          <li>
+            <Link to="/"><FaSlidersH />
+            </Link>
+          </li>
+
+        </ul>
+      </nav>
+    </header>
   );
 };
 

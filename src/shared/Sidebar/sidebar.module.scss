@@ -1,20 +1,44 @@
 $transition: all 0.3s ease;
 
 .sidebarWrapper {
-  display: flex;
-  height: 100vh;
-  font-family: sans-serif;
+  // display: flex;
+  // height: 100vh;
+  // font-family: sans-serif;
 }
-
+body{
+  padding-left: 64px;
+}
 .sidebar {
-  background: #f4f4f4;
-  border-right: 1px solid #ddd;
-  width: 240px;
-  transition: $transition;
+  width: 15rem;
+  height: 100%;
+  background: var(--menu-bg);
+  border-inline-end: 1px solid var(--menu-border-color);
+  position: fixed;
+  inset-block-start: 0;
+  inset-inline-start: 0;
+  z-index: 103;
+  transition: all 0.1s ease-out;
   overflow-y: auto;
 
   &.collapsedSidebar {
     width: 64px;
+  }
+  a {
+    padding: 0.75rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 0.78rem;
+    color: var(--menu-prime-color);
+    font-weight: 400;
+    border-radius: 0.4rem;
+}
+  span{
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1;
+    vertical-align: middle;
   }
 }
 
