@@ -4,7 +4,7 @@ import './Header.scss';
 
 const Header = () => {
   return (
-    <nav className='d-flex align-items-center py-4 px-5 bg-dark text-white'>
+    <nav className='d_flex align_items_center py_1 px_5 bg-dark text-white'>
       <a className="navbar-brand" href="#">Logo</a>
 
       <ul className='d-flex mb-0 gap-5 ps-0'>
