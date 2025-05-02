@@ -4,18 +4,27 @@ import Home from './pages/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Toaster from './pages/toaster/toaster-message';
+import Sidebar from './shared/Sidebar';
 
 function App() {
   return (
     <div className="App">
        <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/toaster" element={<Toaster />} />
-        {/* <Route path="/contact" element={<Contact />} /> */}
-      </Routes>
-    </Router>
+      <div className='body_container'>
+        <div className=''>
+          <Sidebar></Sidebar>
+        </div>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/toaster" element={<Toaster />} />
+            {/* <Route path="/contact" element={<Contact />} /> */}
+          </Routes>
+        </div>
+      </div>
+      </Router>
+    
     </div>
   );
 }
