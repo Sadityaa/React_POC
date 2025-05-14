@@ -14,7 +14,7 @@ const Header = () => {
             <Link to="/"><FaGlobe /></Link>
           </li>
           <li>
-            <Link to="/"><FaMoon />
+            <Link to="/toaster"><FaMoon />
             </Link>
           </li>
           <li>
@@ -44,6 +44,7 @@ const Header = () => {
 
         </ul>
       </nav>
+      
     </header>
   );
 };
