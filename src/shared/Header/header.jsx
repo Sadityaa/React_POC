@@ -1,11 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import './Header.scss';
-import { FaGlobe, FaMoon, FaShoppingCart, FaRegBell, FaThLarge, FaSlidersH, FaExpand } from "react-icons/fa";
+import './header.scss';
+import { FaGlobe, FaMoon, FaShoppingCart, FaRegBell, FaThLarge, FaSlidersH, FaExpand, FaCog } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header>
+<>
+<header>
       <nav className='display_flex align-items_center justify-content_space-between py_1 px_5 text-white'>
         <a className="navbar-brand" href="#">Logo</a>
 
@@ -41,11 +42,14 @@ const Header = () => {
             <Link to="/"><FaSlidersH />
             </Link>
           </li>
-
+          <li>
+            <Link to="/"><FaCog />
+            </Link>
+          </li>
         </ul>
       </nav>
-      
-    </header>
+</header>
+</>
   );
 };
 

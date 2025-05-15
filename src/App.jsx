@@ -2,7 +2,7 @@
 import './App.scss';
 import Home from './pages/Home/Home';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
+import Header from './shared/Header/header';
 import Toaster from './pages/toaster/toaster-message';
 import Sidebar from './shared/Sidebar';
 
