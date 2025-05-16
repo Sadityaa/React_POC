@@ -9,17 +9,17 @@ const Switcher = (props) => {
 
   return (
     <div>
-      <Drawer open={props.switch} anchor='right' onClose={props.toggleDrawer} >
+      <Drawer open={props.switch} anchor='right' onClose={props.toggleDrawer} className={styles.switcher}>
         <div className = {`${styles.switcher_title}  d-flex align-items-center justify-content-between`}>
             <h2>Switcher</h2><span><h5><FaRegWindowClose onClick={props.toggleDrawer}/></h5></span>
         </div>
         <div className = {styles.switcher_data}>
-          <div className={styles.theme_selector }>
+          <div className={styles.switcher_selector }>
             <label className={`${styles.switcher_heading} form-label fw-bold text-dark w-100 pa_1`}>Theme Color Mode:</label>
             <div className="row m-0 d-flex align-items-center px_3 py_1">
               <div className="col-4 form-check d-flex align-items-center gap-2">
                 <input
-                  className="form-check-input custom-radio"
+                  className={`form-check-input ${styles.custom_radio}`}
                   type="radio"
                   name="themeMode"
                   id="lightMode"
@@ -33,7 +33,7 @@ const Switcher = (props) => {
               </div>
               <div className="col-4 form-check d-flex align-items-center gap-2">
                 <input
-                  className="form-check-input custom-radio"
+                  className={`form-check-input ${styles.custom_radio}`}
                   type="radio"
                   name="themeMode"
                   id="darkMode"
@@ -48,12 +48,12 @@ const Switcher = (props) => {
           </div>
           </div>
 
-          <div className={styles.theme_selector }>
+          <div className={styles.switcher_selector }>
             <label className={`${styles.switcher_heading} form-label fw-bold text-dark w-100 pa_1`}>Header Positions:</label>
             <div className="row m-0 d-flex align-items-center px_3 py_1">
               <div className="col-4 form-check d-flex align-items-center gap-2">
                 <input
-                  className="form-check-input custom-radio"
+                  className={`form-check-input ${styles.custom_radio}`}
                   type="radio"
                   name="headerType"
                   id="fixed"
@@ -67,7 +67,7 @@ const Switcher = (props) => {
               </div>
               <div className="col-4 form-check d-flex align-items-center gap-2">
                 <input
-                  className="form-check-input custom-radio"
+                  className={`form-check-input ${styles.custom_radio}`}
                   type="radio"
                   name="headerType"
                   id="scrollable"
@@ -81,7 +81,7 @@ const Switcher = (props) => {
             </div>
             <div className="col-4 form-check d-flex align-items-center gap-2">
                 <input
-                  className="form-check-input custom-radio"
+                  className={`form-check-input ${styles.custom_radio}`}
                   type="radio"
                   name="headerType"
                   id="rounded"
