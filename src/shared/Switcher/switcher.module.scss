@@ -1,0 +1,19 @@
+.switcher_data{
+    width: 440px;
+}
+.switcher_title{
+    border-bottom: 1px solid #f1f1f1;
+    padding: 10px 20px;
+    h2{
+        font-size: 20px;
+        font-weight: bold;
+        margin: 0;
+    }
+}
+.switcher_heading{
+    background : rgb(var(--light-rgb));
+}
+.theme_selector label {
+    font-size: 12.8px;
+    margin: 0;
+}
