@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import './header.scss';
 import { FaGlobe, FaMoon, FaShoppingCart, FaRegBell, FaThLarge, FaSlidersH, FaExpand, FaCog } from "react-icons/fa";
+import Switcher from '../Switcher/switcher';
 
 const Header = () => {
+const [open, setOpen] = useState(false); 
+
+const toggleDrawer = () => {
+    setOpen(prev=>!prev);
+}
+
   return (
 <>
 <header>
@@ -43,14 +50,13 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/"><FaCog />
-            </Link>
+            <Link onClick={toggleDrawer} ><FaCog /></Link>
           </li>
         </ul>
       </nav>
 </header>
+<Switcher switch ={open} toggleDrawer={toggleDrawer}/>
 </>
-  );
-};
+)};
 
 export default Header;
