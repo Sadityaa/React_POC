@@ -1,14 +1,10 @@
 $transition: all 0.3s ease;
 
-body{
-  padding-left: 64px;
-}
 .appSidebar {
   width: 15rem;
   height: 100%;
   background: var(--menu-bg);
-  border-inline-end: 1px solid var(--menu-border-color);
-  position: fixed;
+  // position: fixed;
   inset-block-start: 0;
   inset-inline-start: 0;
   z-index: 103;
@@ -18,6 +14,7 @@ body{
   &.collapsedSidebar {
     width: 64px;
   }
+
   a {
     padding: 0.75rem;
     position: relative;
@@ -28,8 +25,9 @@ body{
     color: var(--menu-prime-color);
     font-weight: 400;
     border-radius: 0.4rem;
-}
-  span{
+  }
+
+  span {
     position: relative;
     // font-size: 0.95rem;
     line-height: 1;
@@ -48,66 +46,69 @@ body{
 .logo {
   font-size: 18px;
   font-weight: bold;
+  color: white;
 }
 
 .toggle {
+  color: white;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 18px;
 }
 
-.menuList {//ul
- padding: 0;
+.menuList {
+  //ul
+  padding: 0;
 
- .sidebarItem {
-   .menuItem {
-    display: flex;
-    align-items: center;
-    padding: 0.5rem 0.9rem;
-    cursor: pointer;
-    transition: $transition;
-    &:hover {
-      background-color: var(--menu-border-color);
+  .sidebarItem {
+    .menuItem {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 0.9rem;
+      cursor: pointer;
+      transition: $transition;
+
+      &:hover {
+        background-color: var(--menu-border-color);
+      }
+
+      a {
+        display: block;
+        padding: 0;
+      }
+
+      .icon {
+        margin-right: 5px;
+        min-width: 20px;
+        color: var(--menu-prime-color);
+      }
+
+      .chevron {
+        margin-left: auto;
+        font-size: 0.715rem;
+        color: var(--menu-prime-color);
+      }
     }
-    a{
-      display: block;
-      padding: 0;
+
+    .children {
+      padding: 0 0 0 15px;
+      margin: 0;
+      animation: fadeIn 0.2s ease-in-out;
     }
- 
-     .icon {
-       margin-right: 5px;
-       min-width: 20px;
-       color: var(--menu-prime-color);
-     }
- 
-     .chevron {
-       margin-left: auto;
-       font-size: 0.715rem;
-       color: var(--menu-prime-color);
-     }
-   }
- 
-   .children {
-    padding: 0 0 0 15px;
-    margin: 0;
-     animation: fadeIn 0.2s ease-in-out;
-     ul{
-      // padding-left: 15px;
-     }
-   }
- 
-   @keyframes fadeIn {
-     from {
-       opacity: 0;
-       transform: translateY(-4px);
-     }
-     to {
-       opacity: 1;
-       transform: translateY(0);
-     }
-   }
- }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-4px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
 }
 
 
@@ -117,11 +118,12 @@ body{
 }
 
 // Vertical Header
-[data-nav-layout="horizontal"]{
+[data-nav-layout="horizontal"] {
   .appSidebar {
     width: 100%;
     height: auto;
-    inset-block-start: 3.2rem;//working as top property
+    // position: absolute;
+    inset-block-start: 3.2rem; //working as top property
     border-bottom: 1px solid var(--menu-border-color);
     background: var(--menu-bg);
     overflow-y: visible;
@@ -134,58 +136,74 @@ body{
       padding-right: 0;
       border-bottom: none;
     }
-    .header{display: none;}
-    .mainSidebar{
+
+    .header {
+      display: none;
+    }
+
+    .mainSidebar {
       width: 94%;
       margin: 0 auto;
-      .menuList{//ui
-        display: flex;padding: 0;margin: 0;
-        .sidebarItem {//li
+
+      .menuList {
+        //ui
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        .sidebarItem {
+          //li
           position: relative;
-        .menuItem {
-          padding: 0;
-          border-radius: 0;
-          margin: 0;
-          flex: 1;
-          justify-content: left;
-          text-align: center;
-          a{
-            padding: 0.9rem 0.9rem;
-           }
-        }
-        // Dropdowns
-        .children{
-          min-width: 200px;
-          padding: 0;
-          position: absolute;
-          top: 100%;
-          left: 0;
-          width: 100%;
-          background-color: var(--menu-bg);
-          border-radius: 0;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-          z-index: 1;
-          li{
-            a{
-              padding: 0.5rem 0.9rem;
-              padding-right: 30px;
-              display: block;
-              width: 100%;
-              text-align: left;
-              border-bottom: solid 1px var(--menu-border-color);
+
+          .menuItem {
+            padding: 0;
+            border-radius: 0;
+            margin: 0;
+            flex: 1;
+            justify-content: left;
+            text-align: center;
+
+            a {
+              padding: 0.9rem 0.9rem;
             }
           }
-          .chevron{
-                position: absolute;
-                right: 6px;
-                top: 12px;
+
+          // Dropdowns
+          .children {
+            min-width: 200px;
+            padding: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--menu-bg);
+            border-radius: 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+
+            li {
+              a {
+                padding: 0.5rem 0.9rem;
+                padding-right: 30px;
+                display: block;
+                width: 100%;
+                text-align: left;
+                border-bottom: solid 1px var(--menu-border-color);
+              }
+            }
+
+            .chevron {
+              position: absolute;
+              right: 6px;
+              top: 12px;
+            }
+
+            // Dropdown inside dropdown
+            ul {
+              left: 100%;
+              top: 0;
+            }
           }
-          // Dropdown inside dropdown
-          ul{
-            left: 100%;
-            top: 0;
-          }
-        }
         }
       }
     }

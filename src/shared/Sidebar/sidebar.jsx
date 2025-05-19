@@ -3,7 +3,7 @@ import styles from "./sidebar.module.scss";
 import {
   FaBars,
   FaDesktop,
-  FaCube ,
+  FaCube,
   FaFile,
   FaChevronDown,
   FaChevronRight,
@@ -16,15 +16,15 @@ const menuData = [
     label: "Dashboard",
   },
   {
-    icon: <FaCube  />,
+    icon: <FaCube />,
     label: "Advanced Ui",
     children: [
       {
         label: "Web",
-        route:'/toaster',
+        route: '/toaster',
         children: [
-          { label: "React Project", icon: <FaFile />, route:'#' },
-          { label: "Vue Project", icon: <FaFile />, route:'#' },
+          { label: "React Project", icon: <FaFile />, route: '#' },
+          { label: "Vue Project", icon: <FaFile />, route: '#' },
         ],
       },
       {
@@ -37,17 +37,17 @@ const menuData = [
     ],
   },
   // List Item end
-    {
-    icon: <FaCube  />,
+  {
+    icon: <FaCube />,
     label: "Pages",
     children: [
       {
         label: "Blog",
-        route:'#',
+        route: '#',
         children: [
-          { label: "Blog1", icon: <FaFile />, route:'#' },
-          { label: "Blog Details", icon: <FaFile />, route:'#' },
-          { label: "Create Blog", icon: <FaFile />, route:'#' },
+          { label: "Blog1", icon: <FaFile />, route: '#' },
+          { label: "Blog Details", icon: <FaFile />, route: '#' },
+          { label: "Create Blog", icon: <FaFile />, route: '#' },
         ],
       },
       {
@@ -60,27 +60,27 @@ const menuData = [
     ],
   },
   // List Item end
-   {
+  {
     icon: <FaDesktop />,
     label: "Utilities",
   },
   // List Item end
-   // List Item end
-    {
-    icon: <FaCube  />,
+  // List Item end
+  {
+    icon: <FaCube />,
     label: "Authentication",
     children: [
       {
         label: "Coming Soon",
-        route:'#',
+        route: '#',
       },
-     {
+      {
         label: "Create Password",
-        route:'#',
+        route: '#',
       },
-         {
+      {
         label: "Lock Screen",
-        route:'#',
+        route: '#',
       },
     ],
   },
@@ -97,7 +97,7 @@ const SidebarItem = ({ item, collapsed, level = 0 }) => {
         // style={{ paddingLeft: `${level * 20 + 16}px` }}
         onClick={() => hasChildren && setOpen(!open)}
       >
-        
+
         {!collapsed && <Link to={item?.route} className={styles.label} id="tetet"><span className={styles.icon} id="test">{item.icon ? item.icon : '-'}</span> {item.label}</Link>}
         {hasChildren && !collapsed && (
           <span className={styles.chevron}>
@@ -147,7 +147,7 @@ const Sidebar = () => {
         </ul>
       </div>
 
-      
+
     </aside>
   );
 };

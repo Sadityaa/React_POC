@@ -2,21 +2,22 @@
 @import "./_customGrid";
 @import "./_customFlexbox";
 @import "./_spaces";
+
 :root {
-  --body-bg-rgb:237,238,241;
-  --body-bg-rgb2:53, 58, 92;
-  --primary-rgb:142, 84, 233;
-  --secondary-rgb:245, 111, 75;
-  --warning-rgb:245, 184, 73;
-  --info-rgb:73, 182, 245;
-  --success-rgb:38, 191, 148;
-  --danger-rgb:230, 83, 60;
-  --light-rgb:248, 249 ,250;
-  --dark-rgb:35, 35, 35;
-  --orange-rgb:255, 165, 5;
-  --pink-rgb:231, 145,188;
-  --teal-rgb:18, 194, 194;
-  --purple-rgb:177,75,213;
+  --body-bg-rgb: 237, 238, 241;
+  --body-bg-rgb2: 53, 58, 92;
+  --primary-rgb: 142, 84, 233;
+  --secondary-rgb: 245, 111, 75;
+  --warning-rgb: 245, 184, 73;
+  --info-rgb: 73, 182, 245;
+  --success-rgb: 38, 191, 148;
+  --danger-rgb: 230, 83, 60;
+  --light-rgb: 248, 249, 250;
+  --dark-rgb: 35, 35, 35;
+  --orange-rgb: 255, 165, 5;
+  --pink-rgb: 231, 145, 188;
+  --teal-rgb: 18, 194, 194;
+  --purple-rgb: 177, 75, 213;
   --default-body-bg-color: rgb(var(--body-bg-rgb));
   --primary-color: rgb(var(--primary-rgb));
   --primary-border: rgb(var(--primary-rgb));
@@ -33,7 +34,7 @@
   --default-text-color: #1b2c3f;
   --default-border: #f0f0f0;
   --default-background: #f2f4f7;
-  --menu-bg: #fff;
+  --menu-bg: #1c2c3f;
   --menu-prime-color: #768394;
   --menu-border-color: #f3f3f3;
   --header-bg: #fff;
@@ -55,49 +56,50 @@
   --gray-7: #4d5875;
   --gray-8: #383853;
   --gray-9: #323251;
-  --white-1: rgba(255,255,255, 0.1);
-  --white-2: rgba(255,255,255, 0.2);
-  --white-3: rgba(255,255,255, 0.3);
-  --white-4: rgba(255,255,255, 0.4);
-  --white-5: rgba(255,255,255, 0.5);
-  --white-6: rgba(255,255,255, 0.6);
-  --white-7: rgba(255,255,255, 0.7);
-  --white-8: rgba(255,255,255, 0.8);
-  --white-9: rgba(255,255,255, 0.9);
-  --black-1: rgba(0,0,0, 0.1);
-  --black-2: rgba(0,0,0, 0.2);
-  --black-3: rgba(0,0,0, 0.3);
-  --black-4: rgba(0,0,0, 0.4);
-  --black-5: rgba(0,0,0, 0.5);
-  --black-6: rgba(0,0,0, 0.6);
-  --black-7: rgba(0,0,0, 0.7);
-  --black-8: rgba(0,0,0, 0.8);
-  --black-9: rgba(0,0,0, 0.9);
+  --white-1: rgba(255, 255, 255, 0.1);
+  --white-2: rgba(255, 255, 255, 0.2);
+  --white-3: rgba(255, 255, 255, 0.3);
+  --white-4: rgba(255, 255, 255, 0.4);
+  --white-5: rgba(255, 255, 255, 0.5);
+  --white-6: rgba(255, 255, 255, 0.6);
+  --white-7: rgba(255, 255, 255, 0.7);
+  --white-8: rgba(255, 255, 255, 0.8);
+  --white-9: rgba(255, 255, 255, 0.9);
+  --black-1: rgba(0, 0, 0, 0.1);
+  --black-2: rgba(0, 0, 0, 0.2);
+  --black-3: rgba(0, 0, 0, 0.3);
+  --black-4: rgba(0, 0, 0, 0.4);
+  --black-5: rgba(0, 0, 0, 0.5);
+  --black-6: rgba(0, 0, 0, 0.6);
+  --black-7: rgba(0, 0, 0, 0.7);
+  --black-8: rgba(0, 0, 0, 0.8);
+  --black-9: rgba(0, 0, 0, 0.9);
   --default-font-family: "Inter", sans-serif;
   --default-font-weight: 400;
 }
+
 [data-theme-mode=dark] {
-  --body-bg-rgb:38,44,60;
+  --body-bg-rgb: 38, 44, 60;
   --menu-bg: rgb(var(--body-bg-rgb));
-  --menu-border-color: rgba(255,255,255,0.1);
-  --menu-prime-color: rgba(255,255,255,0.6);
+  --menu-border-color: rgba(255, 255, 255, 0.1);
+  --menu-prime-color: rgba(255, 255, 255, 0.6);
   --header-bg: rgb(var(--body-bg-rgb));
-  --header-prime-color: rgba(255,255,255,0.6);
-  --header-border-color: rgba(255,255,255,0.1);
+  --header-prime-color: rgba(255, 255, 255, 0.6);
+  --header-border-color: rgba(255, 255, 255, 0.1);
   --custom-white: rgb(var(--body-bg-rgb));
   --custom-black: #fff;
-  --default-border: rgba(255,255,255,0.1);
-  --default-text-color: rgba(255,255,255,0.7);
-  --light-rgb:47,52,66;
-  --dark-rgb:240 ,245 ,248;
-  --bootstrap-card-border: rgba(255,255,255,0.1);
-  --list-hover-focus-bg: rgba(255,255,255,0.1);
-  --default-background: rgba(255,255,255,0.1);
-  --default-body-bg-color: rgb(var(--body-bg-rgb),0.95);
-  --text-muted: rgba(255,255,255,0.5);
-  --input-border: rgba(255,255,255,0.1);
+  --default-border: rgba(255, 255, 255, 0.1);
+  --default-text-color: rgba(255, 255, 255, 0.7);
+  --light-rgb: 47, 52, 66;
+  --dark-rgb: 240, 245, 248;
+  --bootstrap-card-border: rgba(255, 255, 255, 0.1);
+  --list-hover-focus-bg: rgba(255, 255, 255, 0.1);
+  --default-background: rgba(255, 255, 255, 0.1);
+  --default-body-bg-color: rgb(var(--body-bg-rgb), 0.95);
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --input-border: rgba(255, 255, 255, 0.1);
   --form-control-bg: #262c3c;
-  --gray-1: rgba(0,0,0,0.1);
+  --gray-1: rgba(0, 0, 0, 0.1);
   --gray-2: #17171c;
   --gray-3: #393946;
   --gray-4: #505062;
@@ -106,39 +108,41 @@
   --gray-7: #ababba;
   --gray-8: #c7c7d1;
   --gray-9: #e3e3e8;
-  --white-1: rgba(0,0,0,0.1);
-  --white-2: rgba(0,0,0,0.2);
-  --white-3: rgba(0,0,0,0.3);
-  --white-4: rgba(0,0,0,0.4);
-  --white-5: rgba(0,0,0,0.5);
-  --white-6: rgba(0,0,0,0.6);
-  --white-7: rgba(0,0,0,0.7);
-  --white-8: rgba(0,0,0,0.8);
-  --white-9: rgba(0,0,0,0.9);
-  --black-1: rgba(255,255,255,0.1);
-  --black-2: rgba(255,255,255,0.2);
-  --black-3: rgba(255,255,255,0.3);
-  --black-4: rgba(255,255,255,0.4);
-  --black-5: rgba(255,255,255,0.5);
-  --black-6: rgba(255,255,255,0.6);
-  --black-7: rgba(255,255,255,0.7);
-  --black-8: rgba(255,255,255,0.8);
-  --black-9: rgba(255,255,255,0.9);
+  --white-1: rgba(0, 0, 0, 0.1);
+  --white-2: rgba(0, 0, 0, 0.2);
+  --white-3: rgba(0, 0, 0, 0.3);
+  --white-4: rgba(0, 0, 0, 0.4);
+  --white-5: rgba(0, 0, 0, 0.5);
+  --white-6: rgba(0, 0, 0, 0.6);
+  --white-7: rgba(0, 0, 0, 0.7);
+  --white-8: rgba(0, 0, 0, 0.8);
+  --white-9: rgba(0, 0, 0, 0.9);
+  --black-1: rgba(255, 255, 255, 0.1);
+  --black-2: rgba(255, 255, 255, 0.2);
+  --black-3: rgba(255, 255, 255, 0.3);
+  --black-4: rgba(255, 255, 255, 0.4);
+  --black-5: rgba(255, 255, 255, 0.5);
+  --black-6: rgba(255, 255, 255, 0.6);
+  --black-7: rgba(255, 255, 255, 0.7);
+  --black-8: rgba(255, 255, 255, 0.8);
+  --black-9: rgba(255, 255, 255, 0.9);
 }
+
 [data-header-styles=gradient] {
   --header-bg:
-    linear-gradient(
-      to right,
+    linear-gradient(to right,
       #4776e6 0%,
       var(--primary-color)100%);
   --header-border-color: rgba(255, 255, 255, 0.1);
   --header-prime-color: rgba(255, 255, 255, 0.7);
 }
+
 [data-menu-styles=light] {
   --menu-bg: #fff;
   --menu-prime-color: #536485;
   --menu-border-color: #f3f3f3;
 }
+
 .App {
   text-align: center;
 }
@@ -173,36 +177,100 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
 // Global CSS
-body{font-size: 16px;padding: 0;margin: 0;}//base font
-*{box-sizing: border-box;}
-h1, h2, h3, h4, h5, h6 { 
+body {
+  font-size: 16px;
+  padding: 0;
+  margin: 0;
+}
+
+//base font
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--default-font-family);
-  font-weight: 700; 
+  font-weight: 700;
   color: #222;
 }
-h1{font-size: 3rem;}
-h2{font-size: 2.5rem;}
-h3{font-size: 2rem;}
-h4{font-size: 1.5rem;}
-h5{font-size: 1rem;}
-h6{font-size: 0.85rem;}
-ul{padding: 0;margin: 0;list-style: none;}
-p,span,a{
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.85rem;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+p,
+span,
+a {
   font-family: var(--default-font-family);
-  font-weight: 500; 
+  font-weight: 500;
   color: #222;
   font-size: 0.813rem;
 }
-a.link{color: #1313f3;}
 
-// Global class
-// .d_flex{
-//   display: flex;flex-wrap: wrap;
-// }
+a.link {
+  color: #1313f3;
+}
 
+.body_container {
+  display: flex;
+  height: 100vh;
+}
+
+.main_content {
+  height: calc(100vh - 54px);
+  overflow: auto;
+}
+
+header {
+  height: 54px;
+}
+
+[data-nav-layout="horizontal"] {
+  .side_bar_vertical {
+    display: none;
+  }
+}
+
+[data-nav-layout="vertical"] {
+  .side_bar_horizontal {
+    display: none;
+  }
+}
