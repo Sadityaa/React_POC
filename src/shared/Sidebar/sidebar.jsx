@@ -92,7 +92,7 @@ const SidebarItem = ({ item, collapsed, level = 0 }) => {
 
   return (
     <li className={styles.sidebarItem}>
-      <div id="ul2"
+      {!collapsed  && <div id="ul2"
         className={styles.menuItem}
         // style={{ paddingLeft: `${level * 20 + 16}px` }}
         onClick={() => hasChildren && setOpen(!open)}
@@ -104,9 +104,18 @@ const SidebarItem = ({ item, collapsed, level = 0 }) => {
             {open ? <FaChevronDown size={12} /> : <FaChevronRight size={12} />}
           </span>
         )}
-      </div>
+      </div>}
+      {collapsed && <div id="ul2"
+        className={styles.menuItem}
+        style={{display:"flex",alignContent:'center',justifyContent:'center'}}
+        // onClick={() => hasChildren && !collapsed}
+      >
 
-      {hasChildren && open && (
+        <Link to={item?.route} className={styles.label} id="tetet"><span className={styles.icon} id="test" >{item.icon}</span></Link>
+      
+      </div>}
+
+      {hasChildren && (open && !collapsed) &&(
         <ul className={styles.children} id="ul4">
           {item.children.map((child, idx) => (
             <SidebarItem
